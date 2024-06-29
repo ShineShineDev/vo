@@ -15,7 +15,7 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
->  Import **`vo.sql`** file from project root folder
+- Import **`vo.sql`** file from project root folder
 
 
 

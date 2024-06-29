@@ -22,34 +22,21 @@ d - After login, user can see his/her all info including roles &
 permissions and  user can check his/her staffs info including roles &
 permissions who are same department (manager user)
 
-
+Standard user
 {
-    "staff_id": 3,
-    "name": "peter parker(Standard user)",
     "email": "peterparker@gmail.com",
-    "password": "peterparker@gmail.com",
-    "password_confirmation": "peterparker@gmail.com",
-    "flag": true
+    "password": "peterparker@gmail.com"
 }
 
 Super Admin User
 {
-    "staff_id": 2,
-    "name": "William(Super Admin User)",
     "email": "william@gmail.com",
-    "password": "william@gmail.com",
-    "password_confirmation": "william@gmail.com",
-    "flag": true
+    "password": "william@gmail.com"
 }
-
 
 Manger User 
 {
-    "staff_id": 1,
-    "name": "User Jack(Manager)",
     "email": "user1@gmail.com",
-    "password": "user1@gmail.com",
-    "password_confirmation": "user1@gmail.com",
-    "flag": true
+    "password": "user1@gmail.com"
 }
 

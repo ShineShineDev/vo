@@ -1,0 +1,724 @@
+{
+	"info": {
+		"_postman_id": "543e0960-f764-43f2-bd8c-452fee2d76ba",
+		"name": "VO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"user1@gmail.com\",\n    \"password\": \"user1@gmail.com\"\n}"
+								},
+								"url": {
+									"raw": "{{URL}}/api/user/auth/login",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Manager_Token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"staff_id\": 5,\n    \"name\": \"maung maung(Super Admin User)\",\n    \"email\": \"maungmaung@gmail.com\",\n    \"password\": \"maungmaung@gmail.com\",\n    \"password_confirmation\": \"maungmaung@gmail.com\",\n    \"flag\": true\n}"
+								},
+								"url": {
+									"raw": "{{URL}}/api/user/auth/register",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"user",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Add Role to User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Manager_Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : 5,\n    \"role_ids\" : [2]\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/user/add-role",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"add-role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User  by Same Departments",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Standard_User_Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : ,\n    \"role_id\" : \"sDFASDLFJAS\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/user/staff-info",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"staff-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All User List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Manager_Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\" : ,\n    \"role_id\" : \"sDFASDLFJAS\"\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/user/all",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Standard_User_Token}}",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identifier\" : \"spideyshine@gmail.com\",\n    \"password\" : 2332332\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/user/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Role And Permission",
+			"item": [
+				{
+					"name": "Role",
+					"item": [
+						{
+							"name": "Show All",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Manager_Token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{URL}}/api/iam/roles",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"iam",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Manager_Token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Test Role\",\n    \"label\": \"Test Role\",\n    \"flag\": true\n}"
+								},
+								"url": {
+									"raw": "{{URL}}/api/iam/roles",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"iam",
+										"roles"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Permission",
+					"item": [
+						{
+							"name": "Show All",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Super_Admin_Token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identifier\" : \"spideyshine@gmail.com\",\n    \"password\" : 2332332\n}"
+								},
+								"url": {
+									"raw": "{{URL}}/api/iam/permissions",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"iam",
+										"permissions"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"staff_delete\",\n    \"label\" : \"staff_delete\",\n    \"flag\" : true\n}"
+								},
+								"url": {
+									"raw": "{{URL}}/api/iam/permissions",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"iam",
+										"permissions"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bind Permission to Role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{Manager_Token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role_id\": 2,\n    \"permissions\": [1,2,3]\n}"
+						},
+						"url": {
+							"raw": "{{URL}}/api/iam/bind-role-and-permission",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"iam",
+								"bind-role-and-permission"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Staff",
+			"item": [
+				{
+					"name": "Departments",
+					"item": [
+						{
+							"name": "Show All",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Manager_Token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identifier\" : \"spideyshine@gmail.com\",\n    \"password\" : 2332332\n}"
+								},
+								"url": {
+									"raw": "{{URL}}/api/departments",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"departments"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Manager_Token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Software department\",\n    \"label\" : \"Project department\",\n    \"flag\" : true\n}"
+								},
+								"url": {
+									"raw": "{{URL}}/api/departments",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"departments"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Staffs",
+					"item": [
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Manager_Token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"5\",\n    \"name\": \"Maung Maung\",\n    \"email\": \"maungmaung@example.com\",\n    \"mobile\": \"+123647323\",\n    \"joined_date\": \"2024-06-29\",\n    \"position\": \"Account\",\n    \"age\": 34,\n    \"gender\": \"male\",\n    \"status\": \"active\",\n    \"department_ids\" : [5]\n}"
+								},
+								"url": {
+									"raw": "{{URL}}/api/staffs",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"staffs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Show All",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Manager_Token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"identifier\" : \"spideyshine@gmail.com\",\n    \"password\" : 2332332\n}"
+								},
+								"url": {
+									"raw": "{{URL}}/api/staffs",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"staffs"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "default"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Manager_Token}}",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"code\": \"STF004\",\n    \"name\": \"Aung Aung Update\",\n    \"email\": \"aungaung@example.com\",\n    \"mobile\": \"+1236237323\",\n    \"joined_date\": \"2024-06-29\",\n    \"position\": \"Junior Staff\",\n    \"age\": 34,\n    \"gender\": \"male\",\n    \"status\": \"active\",\n    \"department_ids\" : [4]\n}"
+								},
+								"url": {
+									"raw": "{{URL}}/api/staffs/4",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"staffs",
+										"4"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://127.0.0.1:8000",
+			"type": "default"
+		},
+		{
+			"key": "Manager_Token",
+			"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMDc2ZTI4YjY0YzEyMTRjYzBlYzQ2N2M5ZWQyODYzMmM2ZGFlNjgxZWNlYzFlNWNjMjU1ZjM2NjNhNWY1NzNmZWQzNDE2OWI0MmI2OWQwYmMiLCJpYXQiOjE3MTk2ODM5ODEuOTk2NzAyLCJuYmYiOjE3MTk2ODM5ODEuOTk2NzA2LCJleHAiOjE3NTEyMTk5ODEuOTQwNjYzLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.WUHordRvMWjrmJmjvi__0aXMzqUl3pAr3WY56QsBB0R7KdKh5g1tnGZ6-wjt-BrDoOdgMRPlAF862bjh9XEgDNRoZcfp7JAndA-q6-zgdPVTTVe-QDa17hvtLI77AmKSxx2l-QjB1ixX09IzGnibOY1JvPLC4uvI2puKeoum8byfyzL1azWFvoxA-m9JHKz1wFVSg4EQRmzXTvbyjKairVtXjI4P4ne41FMIBrMLkPKJhuGJs8l4VfSl7AFP_I4vBC4wXSWRh-Wj6D-LA7GAYNGkT5KKTNv_Rr3LmP7fDjQgRM__ZJm5sPu361lnIL5cnpA5Mtz5NvsU7aaRAuXDowYpl1bU8oLiyXLlhUS9mPr76uhyG36MvBNcLPjZninz13Je3JKoe_SOcB2utzhA1ZxsZ9KQT6RvwRQHygZkqfG0uWdVL1y_Ecbbq5lMvPe402MaFKMOOnxXRDfSL1DVk4TqtBFukDHJ5pe1-PBadjjz1wavBcWZdS9-0KZsNuH9Iaikx5PkubQd0f2iMaT3TAGejQWNJntysITxDTbhSQkbOvUOO9rcMxqFuwOiWUK6yy_4tQtcdGODD0BV6xWNuOiVv4HFer9A0hoswDO9Fd1MWQrfOAtfLgOKYJPDu3QF99CySn9WPSmv_veN8zn0Z_OgBKj9PzD9GTQ1Ke-M5Rw",
+			"type": "default"
+		},
+		{
+			"key": "Super_Admin_Token",
+			"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiMzBhMDVjNWIzNDYzMGQwODEzM2U3NWI3NmE0NDUyZWU4NmI3MzM4NDBjNTJiMWIzOTU5ZmU3ZGUwODhlYzg1ZGRjNzJhZGNiYWJkNzY5NmMiLCJpYXQiOjE3MTk2ODQwOTUuNDM0MzQ2LCJuYmYiOjE3MTk2ODQwOTUuNDM0MzQ5LCJleHAiOjE3NTEyMjAwOTUuMzQ2ODEzLCJzdWIiOiIyIiwic2NvcGVzIjpbXX0.aQAYm4URJaQzPjeSPocYWsF0n3uZ80dCQbq32AaB_5ust0xLN6xV5vcqGMViwh1yD1VjdQ6wuiCflD1xIc1UPLFYvVaFuE-QFsgKPTuSTEbT4zdS4GcGytbL7oMEfNFhqt_W07oBr5KHlFd3KISMn5AylqveCd8sWNCzkmNa_DgNH45y97cUrPq07jx0ZQbp1R-fpgOvuv4NlIfw6mTP097C61WXgtBdfj4t7PZAHU_uQuTc8Yo3wUBsyjDMhtB4YukVz5MRXzfdfF2rIiTo4J1XmNmyyryBSydKtxWMMqTdr0YqvvbwLyMlTMEuHKmiywI0Ly8tPOaeKuKZW19wj-wtWTfJeob8I64kp6lxQsd6r2B8HFocbjPQOqT5-8AT2qnmK-EsowdLraF93VgdQet66Hs73-1CaYe5Ab8OnXrehDEs8tNqCotLg1gT4LbekT8tV0_PjP_HpNvfbzpI5eHS5gtKOOh-ny6N_1G6n7Lye_7awTPCWxE4HFQ48hiH92OrtqD1vVW6YGC6Ehh4Oyx8o43tZ7ATdvi47wCRHAxh3C8S4MGQjFLphFrKwUvex17H-JICPv075DyxSfPu7xCCY7E9x92DgNMGJ_dSd7eTdn1rFS65brlW_FYriuRfFg3alkqE_lM3vunrTBiaCYzsh_hpcnGz7ZNGVj4T0GE",
+			"type": "default"
+		},
+		{
+			"key": "Standard_User_Token",
+			"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiOWIxN2U1Njc4NjBiZWJjNDllNDE0NmVhNWNjYTI2ODM0M2NhN2QwZjAzZmZlZjJiMGU5M2I2YzFlNTI3YjZiMGRiNzMxNzFkZWMyMGExZDEiLCJpYXQiOjE3MTk2ODUxODguMjI3ODg4LCJuYmYiOjE3MTk2ODUxODguMjI3ODkyLCJleHAiOjE3NTEyMjExODguMTM0NDgxLCJzdWIiOiIzIiwic2NvcGVzIjpbXX0.cZEGqP9m5S9e6m618hvi7CEsUnFD3w0EJ_Ab7l2DrLg5MOfLXrjxTtuiCzi-6Ea2RMytVeYRSAsPEtGBogJbKXrgahKeG6QP5EFQS5brTcEQnT03n1Hi-rviu5Xm-con8emRR5u_WD85GNrQqIp7rJxXYt75G9R5l_3zeozQi_8JJr0vYDVKL0KUO-jb9qCrmy06m8DKa5LRrh6uY5dP7zj2B8vsPTca9VApKJjF1YRlLZ7yY9QNd8UK36GGBwgBMSeE0SZUE1YonnybE83Yi6BmlP4KunT8MmlsBniOw-_DFGhU017V7ZuAGgVmZBtJdEqMWGRMz69ZTYSQeXP956m8Kz21Nzfur6FwkD8FRuAfv0fQMPTPOP2r5Wj6toItY9C6NZSRiQD-FeU_f8rQYvaIO4iRPlDWzOn-lRI4KpotwEBNNCBXLI1OA93q8N_gNssAAADW195m_pTq7eTtQ9ColeE_hyF0SXoI1PuFcmrI7WHTTPCfmal18JoLCMWEotBA7V8AMHwQliG9LVllZYny0Dy0arQrVnG23vnuV0I9QCrrUto80rI6XOiHt3RaqtO1duxTMM3rsi1Oa60NjhPmtAqjSQGqxmGxxnsNpiix9MdK9u1phTWYAcKknA_YEPRh-dZhG1AXNlTabJS1QluTysrtiBUGA54GIAanNtM",
+			"type": "default"
+		}
+	]
+}
